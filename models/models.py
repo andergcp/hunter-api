@@ -18,7 +18,7 @@ class UserSkill(Base):
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid4)
     name = Column(String(32))
     yearsOfExperience = Column(Integer)
-    user = Column(Integer, ForeignKey("user.id"))
+    user_id = Column(Integer, ForeignKey("user.id"))
 
 class Job(Base):
     __tablename__ = "jobs"
@@ -28,14 +28,14 @@ class Job(Base):
     currency = Column(String(3))
     link = Column(String)
     requestedSkills = relationship('JobSkill', cascade='all, delete, delete-orphan')
-    company = Column(Integer, ForeignKey("company.id"))
+    company_id = Column(Integer, ForeignKey("company.id"))
 
 class JobSkill(Base):
     __tablename__ = "job_skills"
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid4)
     name = Column(String(32))
     yearsOfExperienceRequired = Column(Integer)
-    job = Column(Integer, ForeignKey("job.id"))
+    job_id = Column(Integer, ForeignKey("job.id"))
 
 class Company(Base):
     __tablename__ = "companies"
