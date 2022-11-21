@@ -1,6 +1,7 @@
 # API - Proceso Backend Developer
 
 API para la consulta y administración de Usuarios, Empresas y Empleos.
+
 Desarrollada por Anderson Castiblanco (https://www.linkedin.com/in/andergcp/)
 
 **ps:** Le hunter-api no por equivocación :) , es porque algunas empresas prefieren que no se mencione su nombre en los repos públicos de pruebas técnicas :)
