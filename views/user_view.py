@@ -59,11 +59,11 @@ def get_recomendations(db: Session, user_id: str):
 def isMatch(job: app_models.Job, user_skills: app_models.UserSkill):
     requiredSkills = job.requestedSkills
     numberRequestedSkills = len(requiredSkills)
-    matchingSkills = []
+    matchingSkills = 0
 
     for rs in requiredSkills:
         for us in user_skills:
-            if rs["name"] == us["name"] and rs["yearsOfExperienceRequired"] <= us["yearsOfExperience"]:
+            if rs.name == us.name and rs.yearsOfExperienceRequired <= us.yearsOfExperience:
                 matchingSkills += 1
 
     if matchingSkills >= numberRequestedSkills/2:
