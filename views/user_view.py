@@ -59,6 +59,8 @@ def get_recomendations(db: Session, user_id: str):
 def isMatch(job: app_models.Job, user_skills: app_models.UserSkill):
     requiredSkills = job.requestedSkills
     numberRequestedSkills = len(requiredSkills)
+    if numberRequestedSkills == 0:
+        return False
     matchingSkills = 0
 
     for rs in requiredSkills:
