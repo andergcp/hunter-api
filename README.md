@@ -2,7 +2,7 @@
 
 API para la consulta y administración de Usuarios, Empresas y Empleos.
 
-**ps:** No le puse hunter-api por equivocación :) , algunas empresas prefieren que no se mencione su nombre en los repos de pruebas técnicas :)
+**ps:** Le hunter-api no por equivocación :) , es porque algunas empresas prefieren que no se mencione su nombre en los repos públicos de pruebas técnicas :)
 
 ## Ejecuta la aplicación usando un contenedor de Docker.
 
