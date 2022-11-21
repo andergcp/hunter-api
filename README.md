@@ -19,4 +19,18 @@ Desarrollada por Anderson Castiblanco (https://www.linkedin.com/in/andergcp/)
 Encuentra la documentación de la API en: https://elements.getpostman.com/redirect?entityId=13424395-e166430e-6966-43f7-889b-7efe1a801b3c&entityType=collection
 
 
+## To-Do - Mejoras
+Esta es la versión inicial, algunas mejoras y pendientes son:
 
+Pendientes
+* Endpoint para recomendación de vacantes a un usuario
+* Unit testing.
+
+Mejoras
+* Mejorar la validación de los campos que reciben los objetos al crearse
+* Mejorar el manejo de excepciones y errores.
+* Aumentar la cobertura de los unit tests.
+* Mover las operaciones de FastApi del archivo main al módulo routers, usando APIRouter de FastApi.
+* Unificar los schemas en un solo archivo para mejor mantenibilidad
+* Usar una sola tabla para skills que la consulten job y user.
+* Poner límites a cantidad objetos devueltos en las consultas que traen todos los usuarios, vacantes o empresas.
