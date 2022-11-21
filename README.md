@@ -23,7 +23,6 @@ Encuentra la documentación de la API en: https://elements.getpostman.com/redire
 Esta es la versión inicial, algunas mejoras y pendientes son:
 
 Pendientes
-* Endpoint para recomendación de vacantes a un usuario
 * Unit testing.
 
 Mejoras
@@ -34,3 +33,4 @@ Mejoras
 * Unificar los schemas en un solo archivo para mejor mantenibilidad
 * Usar una sola tabla para skills que la consulten job y user.
 * Poner límites a cantidad objetos devueltos en las consultas que traen todos los usuarios, vacantes o empresas.
+* Mejorar el algoritmo de recomendación de vacantes.
