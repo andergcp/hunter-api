@@ -4,7 +4,7 @@ API para la consulta y administración de Usuarios, Empresas y Empleos.
 
 Desarrollada por Anderson Castiblanco (https://www.linkedin.com/in/andergcp/)
 
-**ps:** Le hunter-api no por equivocación :) , es porque algunas empresas prefieren que no se mencione su nombre en los repos públicos de pruebas técnicas :)
+**ps:** Le puse hunter-api al repo no por equivocación :) , es porque algunas empresas prefieren que no se mencione su nombre en los repos públicos de pruebas técnicas :)
 
 ## Ejecuta la aplicación usando un contenedor de Docker.
 
