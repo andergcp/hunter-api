@@ -42,3 +42,30 @@ def update_user(db: Session, user_id: str, updatedUser: schemas.user.User):
     db.commit()
     db.refresh(user)
     return user
+
+def get_recomendations(db: Session, user_id: str):
+    user_skills = db.query(app_models.UserSkill).filter(app_models.UserSkill.user_id == user_id).all()
+
+    jobs = db.query(app_models.Job).all()
+
+    recommendedJobs = []
+    for job in jobs:
+        if isMatch(job, user_skills):
+            recommendedJobs.append(job)
+    
+    return recommendedJobs
+        
+
+def isMatch(job: app_models.Job, user_skills: app_models.UserSkill):
+    requiredSkills = job.requestedSkills
+    numberRequestedSkills = len(requiredSkills)
+    matchingSkills = []
+
+    for rs in requiredSkills:
+        for us in user_skills:
+            if rs["name"] == us["name"] and rs["yearsOfExperienceRequired"] <= us["yearsOfExperience"]:
+                matchingSkills += 1
+
+    if matchingSkills >= numberRequestedSkills/2:
+        return True
+    return False

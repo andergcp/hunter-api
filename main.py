@@ -187,6 +187,13 @@ def update_job_skill(jobSkillNewData: job_skill.JobSkillUpdate, job_skill_id: st
     job_skill_update_result = job_skills_view.update_job_skill(db, job_skill_id=job_skill_id, updatedJobSkill=updated_job_skill)
     return job_skill_update_result
     
+@app.get("/recommendations/{user_id}")
+def get_recommendations(user_id: str, db: Session = Depends(get_db)):
+    recommendations = user_view.get_recomendations(db, user_id=user_id)
+    if recommendations is None:
+        raise HTTPException(status_code=404, detail="Ocurrió un error generando las recomendaciones")
+    return recommendations
+
 #General Root
 
 @app.get("/")
