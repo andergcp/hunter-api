@@ -1,16 +1,23 @@
 from typing import List, Optional, Union
-from uuid import uuid4, UUID
 from pydantic import BaseModel, EmailStr
 
 from schemas.user_skill import UserSkill
 
 class User(BaseModel):
-    id: Optional[UUID] = uuid4()
+    id: Optional[str] = None
     first_name : str
     last_name : str
     email : EmailStr
-    yearsOfPreviousExperience : int
+    years_of_previous_experience : int
     skills : Union[List[UserSkill], None] = None
     
     class Config:
         orm_mode = True
+
+class UserUpdate(BaseModel):
+    id: Optional[str] = None
+    first_name : Optional[str]
+    last_name : Optional[str]
+    email : Optional[EmailStr]
+    years_of_previous_experience : Optional[int]
+    skills : Union[List[UserSkill], None] = None

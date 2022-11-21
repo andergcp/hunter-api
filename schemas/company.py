@@ -1,11 +1,10 @@
 from typing import List, Optional, Union
-from uuid import uuid4, UUID
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel
 
 from schemas.job import Job
 
 class Company(BaseModel):
-    id : Optional[UUID] = uuid4()
+    id: Optional[str] = None
     name : str
     nit : int
     city : str
@@ -14,3 +13,11 @@ class Company(BaseModel):
 
     class Config:
         orm_mode = True
+
+class CompanyUpdate(BaseModel):
+    id: Optional[str] = None
+    name : Optional[str]
+    nit : Optional[int]
+    city : Optional[str]
+    industry : Optional[str]
+

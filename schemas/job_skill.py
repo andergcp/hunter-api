@@ -1,12 +1,18 @@
 from typing import Optional
-from uuid import uuid4, UUID
 from pydantic import BaseModel
 
 class JobSkill(BaseModel):
-    id: Optional[UUID] = uuid4()
+    id: Optional[str] = None
     name : str
     yearsOfExperienceRequired : int
-    job_id : UUID
+    job_id : str
 
     class Config:
         orm_mode = True
+
+class JobSkillUpdate(BaseModel):
+    id: Optional[str] = None
+    name : Optional[str]
+    yearsOfExperienceRequired : Optional[int]
+    job_id : Optional[str]
+
